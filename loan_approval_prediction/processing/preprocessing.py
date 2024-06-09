@@ -1,5 +1,6 @@
 from loan_approval_prediction.config import config
 from sklearn.base import BaseEstimator, TransformerMixin
+from sklearn.preprocessing import LabelEncoder
 
 
 class MeanImputer(BaseEstimator, TransformerMixin):
@@ -15,7 +16,7 @@ class MeanImputer(BaseEstimator, TransformerMixin):
     def transform(self, X):
         X = X.copy()
         for var in self.variables:
-            X[var].fillna(self.mean_dict[var], axis=1, inplace=True)
+            X[var].fillna(self.mean_dict[var], inplace=True)
         return X
 
 
@@ -32,7 +33,7 @@ class ModeImputer(BaseEstimator, TransformerMixin):
     def transform(self, X):
         X = X.copy()
         for var in self.variables:
-            X[var].fillna(self.mean_dict[var], axis=1, inplace=True)
+            X[var].fillna(self.mean_dict[var], inplace=True)
         return X
 
 
@@ -76,3 +77,13 @@ class LogTransformation(BaseEstimator, TransformerMixin):
             X[var] = np.log(X[var])
         return X
 
+class MyLabelEncoder(BaseEstimator, TransformerMixin):
+    def __init__(self):
+        self.encoder = LabelEncoder()
+
+    def fit(self, X, y=0):
+        self.encoder.fit(X)
+        return self
+
+    def transform(self, X):
+        return self.encoder.transform(X)

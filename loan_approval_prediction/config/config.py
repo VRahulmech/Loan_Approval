@@ -20,10 +20,10 @@ FEATURES = ['Gender', 'Married', 'Dependents', 'Education', 'Self_Employed',
 
 NUM_FEATURES = ['ApplicantIncome', 'LoanAmount', 'Loan_Amount_Term']
 
-CAT_FEATURES = ['Gender', 'Married', 'Dependents', 'Education', 'Self_Employed', 'Credit_History', 'Property_Area']
+CAT_FEATURES = ['Gender', 'Married', 'Education', 'Dependents', 'Self_Employed', 'Credit_History', 'Property_Area']
 
 
-FEATURES_TO_ENCODE = ['Gender', 'Married', 'Dependents', 'Education', 'Self_Employed', 'Credit_History', 'Property_Area']
+FEATURES_TO_ENCODE = ['Gender', 'Married', 'Education', 'Self_Employed', 'Credit_History', 'Property_Area']
 
 FEATURE_TO_MODIFY = 'ApplicantIncome'
 FEATURE_TO_ADD = 'CoapplicantIncome'

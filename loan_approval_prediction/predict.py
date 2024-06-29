@@ -3,8 +3,11 @@ from loan_approval_prediction.data_handling import handling
 import numpy as np
 
 
-def predict():
-    test_data = handling.load_dataset(config.TEST_DF)
+def predict(dataset=None):
+    if dataset=None:
+        test_data = handling.load_dataset(config.TEST_DF)
+    else:
+        test_data = dataset
     loaded_model = handling.load_pipeline(config.SAVED_MODELS_PATH)
     pred = loaded_model.predict(test_data[config.FEATURES])
     output = np.where(pred == 1, 'Y', 'N')

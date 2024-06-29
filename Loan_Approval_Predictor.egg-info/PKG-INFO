@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: Loan-Approval-Predictor
+Version: 1.0.0
+Summary: This app predicts the loan approval
+Home-page: https://github.com/VRahulmech/Loan_Approval.git
+Author: Vasala Rahul
+Author-email: rahul.vasala98@gmail.com
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.10.14
+License-File: LICENSE.txt
+Requires-Dist: build==1.2.1
+Requires-Dist: joblib==1.4.2
+Requires-Dist: numpy==1.26.4
+Requires-Dist: pandas==2.2.2
+Requires-Dist: pyproject_hooks==1.1.0
+Requires-Dist: python-dateutil==2.9.0.post0
+Requires-Dist: pytz==2024.1
+Requires-Dist: pytest==8.2.2
+Requires-Dist: scikit-learn==1.5.0
+Requires-Dist: scipy==1.13.1
+Requires-Dist: six==1.16.0
+Requires-Dist: threadpoolctl==3.5.0
+Requires-Dist: tzdata==2024.1
+
+HI

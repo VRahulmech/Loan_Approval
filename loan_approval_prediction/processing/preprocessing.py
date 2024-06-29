@@ -82,15 +82,17 @@ class LogTransformation(BaseEstimator, TransformerMixin):
 
 
 class MyEncoder(BaseEstimator, TransformerMixin):
-    def __init__(self, *args, **kwargs):
-        self.encoder = OrdinalEncoder(*args, **kwargs)
+    def __init__(self, variables = None):
+        self.encoder = OrdinalEncoder()
+        self.variables = variables
 
     def fit(self, X, y=None):
-        self.encoder.fit(X)
+        self.encoder.fit(X[self.variables])
         return self
 
     def transform(self, X, y=None):
         cols = X.columns
-        X = self.encoder.transform(X)
-        encoded_df = pd.DataFrame(X, columns=cols)
-        return encoded_df
+        X_encoded = self.encoder.transform(X[self.variables])
+        encoded_df = pd.DataFrame(X_encoded, columns=self.encoder.get_feature_names_out(self.variables))
+        X_result = pd.concat([X.drop(columns=self.variables), encoded_df], axis=1)
+        return X_result

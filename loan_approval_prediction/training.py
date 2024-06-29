@@ -1,6 +1,5 @@
 from loan_approval_prediction.data_handling import handling
 from loan_approval_prediction.config import config
-import loan_approval_prediction.processing.preprocessing as pp
 import loan_approval_prediction.pipeline as pipe
 
 
